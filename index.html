@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- firebase.js is loading everything, modules/libraries, that has to do with firebase -->
+        <!-- <script src="https://www.gstatic.com/firebasejs/5.10.0/firebase.js"></script> -->
+
+        <!-- these are loading only the components we need -->
+        <script src="https://www.gstatic.com/firebasejs/5.10.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.10.0/firebase-firestore.js"></script>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+
+        <h1>Eola Chatroom Testing</h1>
+
+        <div class="content">
+            <ul id="messageDisplay"></ul>
+
+            <form id="messageSender">
+                    <input type="text" name="messageToSend"/>
+                    <input type="submit" name="messageSubmit" value="Send"/>
+            </form>
+        </div>
+
+        <script>
+            // Initialize Firebase
+            var config = {
+                apiKey: "AIzaSyBtIxo5FbUb8BUnKkhBJOyyKS9vTDh_f5U",
+                authDomain: "chatroom-4b0d3.firebaseapp.com",
+                databaseURL: "https://chatroom-4b0d3.firebaseio.com",
+                projectId: "chatroom-4b0d3",
+                storageBucket: "chatroom-4b0d3.appspot.com",
+                messagingSenderId: "1003860543504"
+            };
+            firebase.initializeApp(config);
+            //   this is creating a reference to our firebase
+            const db = firebase.firestore()
+            //   a setting for working with snapshots
+            //db.settings({timestampsInSnapshots: true})
+        </script>
+
+        <script src="app.js"></script>
+    </body>
+</html>
